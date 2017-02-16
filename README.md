@@ -15,7 +15,9 @@ https://devchat.tv/js-jabber/jsj-247-building-a-development-environment-with-cor
 - ESLint http://eslint.org/docs/user-guide/getting-started 
 - Mocha (testing framework)  
 - Chai (assertion library)   
-- JSDOM (virtual DOM simulation for testing)  
+- JSDOM (virtual DOM simulation for testing) 
+- TravisCI https://travis-ci.org/ (Linux platform testing)  
+- AppVeyor (Windows platform testing)  
 
 ---
 ####Localtunnel 
