@@ -17,7 +17,7 @@ https://devchat.tv/js-jabber/jsj-247-building-a-development-environment-with-cor
 - Chai (assertion library)   
 - JSDOM (virtual DOM simulation for testing) 
 - TravisCI https://travis-ci.org/ (Linux platform testing)  
-- AppVeyor (Windows platform testing)  
+- AppVeyor https://ci.appveyor.com/projects/new (Windows platform testing)  
 
 ---
 ####Localtunnel 
@@ -77,3 +77,11 @@ SOL: This requires a global install of `babel-cli`. Therefore, npm scripts are n
 5. The window param in the callback then gives us the root of the DOM. We can now access any element: `const h1 = window.document.getElementsByTagName('h1')[0];` Remember that the js dom traversal methods will return an array of elements.  
 6. In an async function (ie one with a callback), remember to pass in `done` and then call `done()` at the end to tell mocha it is safe to evaluate the tests.  
 7. Calling `window.close()` saves memory  
+
+---
+####Continuous Integration with TravisCI and AppVeyor 
+1. Travis tests our app on Linux and AppVeyor on a Windows platform. They allows us to test our app automatically on commit on another machine. Both work in the same way:
+2. Create a `.travis.yml` and an `appVeyor.yml` file to configure the servers. 
+3. Commit changes and push to Github 
+4. Navigate to the projects page https://ci.appveyor.com/projects/new or https://travis-ci.org/ and select the app and run build. 
+5. The CI server will download dependencies, run the build and run any tests, then show some stats and any error messages.  
