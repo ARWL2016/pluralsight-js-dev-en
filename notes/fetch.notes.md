@@ -1,0 +1,5 @@
+####Fetch
+The fetch function is a layer of abstraction over Ajax requests  (I think). The whatwg-fetch module is an implementation with a polyfill for older browsers. The following example uses `userApi.js` to centralise requests, mocks the server response in `srcServer.js`, and writes the results to the UI in `index.js`. 
+In `userApi.js` we use layers of functions to abstract away the actual http request. We export a function `getUsers` which returns a call to `get('users')`. This, in turn returns the actual fetch function `return fetch(url).then(onSuccess, onError);`. The success and error function are defined separately but are enclosed in the return statement. So when we call getUsers(), we initiate a fetch function to url `users` which returns through a promise a `response.json()` call.
+This http call then gets made in the browser and go to our `/users` route, which returns the json as a response object.  
+This response object is then returned to `index.js` by the promise reponse.json function and printed out to to UI. 

@@ -18,6 +18,9 @@ https://devchat.tv/js-jabber/jsj-247-building-a-development-environment-with-cor
 - JSDOM (virtual DOM simulation for testing) 
 - TravisCI https://travis-ci.org/ (Linux platform testing)  
 - AppVeyor https://ci.appveyor.com/projects/new (Windows platform testing)  
+- whatwg-fetch (window.fetch polyfill) https://www.npmjs.com/package/whatwg-fetch  
+- JSON Schema Faker (with faker, chance and regexp)  
+- JSON Server  
 
 ---
 ####Localtunnel 
@@ -37,6 +40,7 @@ https://devchat.tv/js-jabber/jsj-247-building-a-development-environment-with-cor
 7. The npm scripts make use of the `npm-run-all` and `--parallel` commands  
 8. We build into the source and use this while developing - so there is no public folder 
 9. `buildScripts` is not like a `build` folder. It is not for the build output, but for utility files which run the build.  
+10. The course module on HTTP calls generates the following files: `generateMockData.s`, `mockDataSchema.js`, and the three files in the `api` folder. This module focuses on creating a mock database server so that we can develop and test http requests in a working environment.  
 
 ####Questions
 PROB: Running babel-node directly in the command line doesn't work, but the scripts run ok. 
