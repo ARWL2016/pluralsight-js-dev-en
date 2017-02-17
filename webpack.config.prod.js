@@ -1,25 +1,32 @@
 import path from 'path';
+import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin'; 
 
 export default {
   debug: true,
-  devtool: 'inline-source-map',
+  devtool: 'source-map', //larger - recommended for production
   noInfo: false,
   entry: [
     path.resolve(__dirname, 'src/index')
   ],
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, 'dist'), //distribution
     publicPath: '/',
     filename: 'bundle.js'
   },
   plugins: [
+    //Create HTML file with reference to bundle.js
     new HtmlWebpackPlugin({
       template: 'src/index.html', 
       inject: true //injects script tag 
-      //more options available to minify - see course repo
-    })
+    }),
+
+    //Eliminate duplicate packages 
+    new webpack.optimize.DedupePlugin(), 
+    
+    // Minify JS 
+    new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     loaders: [
