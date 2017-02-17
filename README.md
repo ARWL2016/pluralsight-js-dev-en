@@ -21,6 +21,9 @@ https://devchat.tv/js-jabber/jsj-247-building-a-development-environment-with-cor
 - whatwg-fetch (window.fetch polyfill) https://www.npmjs.com/package/whatwg-fetch  
 - JSON Schema Faker (with faker, chance and regexp)  
 - JSON Server  
+- Track.JS (not included in this demo)  
+- Surge 
+- Heroku  
 
 ---
 ####Localtunnel 
@@ -42,6 +45,7 @@ https://devchat.tv/js-jabber/jsj-247-building-a-development-environment-with-cor
 9. `buildScripts` is not like a `build` folder. It is not for the build output, but for utility files which run the build.  
 10. The course module on HTTP calls generates the following files: `generateMockData.s`, `mockDataSchema.js`, and the three files in the `api` folder. This module focuses on creating a mock database server so that we can develop and test http requests in a working environment.  
 11. `npm run ... -s` - silent mode, reduces terminal output  
+12. Final module note implemented in this demo, but includes discussion of separating API from UI. He deploys the API to Heroku and the front-end to Surge (static files only). 
 
 ####Questions
 PROB: Running babel-node directly in the command line doesn't work, but the scripts run ok. 
